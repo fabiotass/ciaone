@@ -1,0 +1,22 @@
+N = int(input("Numero ?"))
+
+
+def primi(x):
+    lista = []
+    numb  = [1]
+    da_el = []
+    for i in range(0,x-1):
+        lista.append(i+2)
+    while len(lista):
+        a = lista[0]
+        M = max(lista)
+        numb.append(a)
+        da_el = [lista[0]]
+        for i in lista:
+            if (a * i) <= M:
+                da_el.append(a * i)
+        for j in da_el:
+            lista.remove(j)
+    return numb
+    
+print("I numeri primi minori o uguali di ", N, " sono: ", primi(N))
